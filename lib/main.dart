@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/bloc/counter_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_application_1/bloc_observer.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,15 +67,13 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              MaterialButton(
-                color: Colors.orange,
+              ElevatedButton(
                 child: Text('Increment'),
                 onPressed: () {
                   context.read<CounterBloc>().add(CounterIncrementEvent());
                 },
               ),
-              MaterialButton(
-                color: Colors.orange,
+              ElevatedButton(
                 child: Text('Decrement'),
                 onPressed: () {
                   context.read<CounterBloc>().add(CounterDecrementEvent());
